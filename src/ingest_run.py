@@ -11,21 +11,34 @@ HISTORY_PATH = Path("dist/library/history_snapshot.parquet")
 def sha256_str(s: str) -> str:
   return hashlib.sha256(s.encode("utf-8")).hexdigest()
 
-def norm_float(x):
-  if x is None or x == "":
+def _clean_nullish(v):
+  if v is None:
+    return None
+  if isinstance(v, str):
+    t = v.strip().lower()
+    if t in ("", "null", "none", "nan"):
+      return None
+  return v
+
+def norm_float(v):
+  v = _clean_nullish(v)
+  if v is None:
     return None
   try:
-    return float(x)
+    return float(v)
   except Exception:
     return None
 
-def norm_int(x):
-  if x is None or x == "":
+
+def norm_int(v):
+  v = _clean_nullish(v)
+  if v is None:
     return None
   try:
-    return int(x)
+    return int(float(v))
   except Exception:
     return None
+
 
 def load_all_records(run_dir: Path):
   records = []
