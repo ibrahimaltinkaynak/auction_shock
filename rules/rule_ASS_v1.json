@@ -1,0 +1,15 @@
+{
+  "rule_id": "ASS_v1",
+  "schema_version": "1.0",
+  "lookback_auctions": 120,
+  "z_min": 1.6,
+  "composite_threshold": 2.2,
+  "k_min": 2,
+  "features": [
+    "bid_to_cover",
+    "tail_bps",
+    "pct_indirect"
+  ],
+  "composite_definition": "max_abs_z",
+  "notes": "FACTUAL_ONLY"
+}
