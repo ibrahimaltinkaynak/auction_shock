@@ -47,6 +47,10 @@ def normalize_records(records):
     bid_to_cover = norm_float(r.get("bid_to_cover_ratio"))
     high_yield = norm_float(r.get("high_yield"))
     avg_med_yield = norm_float(r.get("avg_med_yield"))
+    high_discnt_rate = norm_float(r.get("high_discnt_rate"))
+    avg_med_discnt_rate = norm_float(r.get("avg_med_discnt_rate"))
+    high_investment_rate = norm_float(r.get("high_investment_rate"))
+    avg_med_investment_rate = norm_float(r.get("avg_med_investment_rate"))
 
     indirect_acc = norm_float(r.get("indirect_bidder_accepted"))
     total_acc = norm_float(r.get("total_accepted"))
@@ -57,14 +61,23 @@ def normalize_records(records):
 
     tail_bps = None
     tail_method = "missing"
+    tail_kind = "missing"
 
-    # Tail proxy (FACTUAL ONLY) — v1 canonical
-    # We never infer missing fields. We only compute if both numbers exist.
+    # Tail proxy (FACTUAL ONLY) — multi-kind
+    # Only compute when both numbers exist. Never infer.
     if high_yield is not None and avg_med_yield is not None:
       tail_bps = (high_yield - avg_med_yield) * 100.0
       tail_method = "proxy_yield_high_minus_avgmed"
+      tail_kind = "yield"
+    elif high_discnt_rate is not None and avg_med_discnt_rate is not None:
+      tail_bps = (high_discnt_rate - avg_med_discnt_rate) * 100.0
+      tail_method = "proxy_discnt_high_minus_avgmed"
+      tail_kind = "discount_rate"
+    elif high_investment_rate is not None and avg_med_investment_rate is not None:
+      tail_bps = (high_investment_rate - avg_med_investment_rate) * 100.0
+      tail_method = "proxy_investment_high_minus_avgmed"
+      tail_kind = "investment_rate"
 
-    # hash d'enregistrement brut (record hash), pas hash de page
     rec_hash = sha256_str(json.dumps(r, sort_keys=True, separators=(",", ":")))
 
     auction_id = f"{auction_date}_{cusip}"
@@ -88,6 +101,7 @@ def normalize_records(records):
       "avg_med_yield": avg_med_yield,
       "tail_bps": tail_bps,
       "tail_method": tail_method,
+      "tail_kind": tail_kind,
       "pct_indirect": pct_indirect,
       "raw_record_hash": rec_hash,
       "data_quality_flags": "|".join(dq) if dq else ""
