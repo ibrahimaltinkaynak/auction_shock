@@ -5,8 +5,6 @@ import pandas as pd
 
 HISTORY_PATH = Path("dist/library/history_snapshot.parquet")
 PROOF_PATH = Path("dist/proof_packs/proof_missing_tail_proxy_730d_v5.json")
-RUN_META_PATH = Path("dist/raw/fiscaldata/20260109T002921Z_730d_v5/RUN_META.json")
-
 def ok(msg): print("OK:", msg)
 def fail(msg): raise SystemExit("FAIL: " + msg)
 
@@ -18,6 +16,8 @@ def main(run_dir_arg: str) -> None:
     raise SystemExit(2)
 
   run_dir = Path(run_dir_arg)
+  # RUN_META must be inside the RUN_DIR we validate (no hardcode)
+  run_meta_path = run_dir / "RUN_META.json"
   if not run_dir.exists():
     print(f'FAIL: RUN_DIR not found: {run_dir}')
     raise SystemExit(2)
@@ -28,10 +28,22 @@ def main(run_dir_arg: str) -> None:
   if not PROOF_PATH.exists(): fail(f"missing {PROOF_PATH}")
   ok(f"found {PROOF_PATH}")
 
-  if not RUN_META_PATH.exists(): fail(f"missing {RUN_META_PATH}")
-  ok(f"found {RUN_META_PATH}")
+  if not run_meta_path.exists(): fail(f"missing {run_meta_path}")
+  ok(f"found {run_meta_path}")
 
-  run_meta = json.loads(RUN_META_PATH.read_text(encoding="utf-8"))
+  run_meta = json.loads(run_meta_path.read_text(encoding="utf-8"))
+
+  # strict: RUN_DIR must be the canonical v5 run
+  run_name = run_dir.name
+  if not run_name.endswith("_730d_v5"):
+    fail(f"RUN_DIR must end with _730d_v5, got: {run_name}")
+  ok("RUN_DIR suffix == _730d_v5")
+
+  # strict: RUN_META required keys
+  for k in ("requested_start_date","requested_end_date","observed_min_auction_date","observed_max_auction_date"):
+    if k not in run_meta:
+      fail(f"RUN_META missing key: {k}")
+  ok("RUN_META has requested_* and observed_*")
   obs_min = run_meta.get("observed_min_auction_date")
   obs_max = run_meta.get("observed_max_auction_date")
   total_rows = int(run_meta.get("total_rows", -1))
@@ -70,6 +82,12 @@ def main(run_dir_arg: str) -> None:
   missing = int((df["tail_kind"] == "missing").sum())
   proof = json.loads(PROOF_PATH.read_text(encoding="utf-8"))
 
+
+  # strict: proof pack must refer to the same RUN_DIR we're validating
+  proof_run_dir = str(proof.get("run_dir", ""))
+  if proof_run_dir != str(run_dir):
+    fail(f"proof run_dir mismatch: proof={proof_run_dir} validator={run_dir}")
+  ok("proof run_dir matches validator RUN_DIR")
   if int(proof.get("missing_count_parquet", -1)) != missing:
     fail("proof missing_count_parquet mismatch vs parquet missing")
   ok("proof missing_count_parquet matches parquet missing")
