@@ -6,3 +6,12 @@ dist/library/event_library.sqlite
 dist/library/history_snapshot.parquet
 logs/
 legacy/
+
+# backups
+*.bak_*
+
+# dist: keep proof packs only
+dist/*
+!dist/proof_packs/
+!dist/proof_packs/**
+
