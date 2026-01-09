@@ -5,12 +5,12 @@ import sys
 import pandas as pd
 
 HISTORY_PATH = Path("dist/library/history_snapshot.parquet")
-PROOF_PATH = Path("dist/proof_packs/proof_missing_tail_proxy_730d_v3.json")
+PROOF_PATH = Path("dist/proof_packs/proof_missing_tail_proxy_730d_v4.json")
 
 EXPECTED = {
-  "rows": 882,
-  "min_date": "2024-01-09",
-  "max_date": "2026-01-08",
+  "rows": 880,
+  "min_date": "2024-01-10",
+  "max_date": "2026-01-09",
   "missing_tail": 24,
 }
 
