@@ -1,4 +1,5 @@
 import json
+import sys
 from pathlib import Path
 import pandas as pd
 
@@ -9,7 +10,18 @@ RUN_META_PATH = Path("dist/raw/fiscaldata/20260109T002921Z_730d_v5/RUN_META.json
 def ok(msg): print("OK:", msg)
 def fail(msg): raise SystemExit("FAIL: " + msg)
 
-def main():
+def main(run_dir_arg: str) -> None:
+  # strict mode: require explicit RUN_DIR
+  if not run_dir_arg:
+    print('FAIL: missing RUN_DIR argument')
+    print('USAGE: python src/validate_snapshot.py dist/raw/fiscaldata/<RUN_ID>')
+    raise SystemExit(2)
+
+  run_dir = Path(run_dir_arg)
+  if not run_dir.exists():
+    print(f'FAIL: RUN_DIR not found: {run_dir}')
+    raise SystemExit(2)
+
   if not HISTORY_PATH.exists(): fail(f"missing {HISTORY_PATH}")
   ok(f"found {HISTORY_PATH}")
 
@@ -69,4 +81,4 @@ def main():
   ok("validate_snapshot PASSED")
 
 if __name__ == "__main__":
-  main()
+  main(sys.argv[1] if len(sys.argv) > 1 else "")
