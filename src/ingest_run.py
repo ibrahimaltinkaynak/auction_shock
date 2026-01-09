@@ -163,7 +163,7 @@ def main(run_dir_str: str):
     "run_dir": str(run_dir),
     "normalized_rows": int(len(df)),
     "history_total_rows": int(total),
-    "created_at_utc": dt.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+    "created_at_utc": dt.datetime.now(dt.UTC).replace(microsecond=0).isoformat().replace("+00:00","Z")
   }
   print(json.dumps(out, indent=2))
 
