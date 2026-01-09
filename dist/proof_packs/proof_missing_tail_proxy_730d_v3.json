@@ -1,0 +1,537 @@
+{
+  "run_dir": "dist/raw/fiscaldata/20260108T191011Z_730d_v3",
+  "missing_count_parquet": 24,
+  "missing_count_found_in_raw": 24,
+  "missing_targets": [
+    {
+      "auction_date": "2024-01-24",
+      "cusip": "91282CJU6"
+    },
+    {
+      "auction_date": "2024-02-21",
+      "cusip": "91282CJU6"
+    },
+    {
+      "auction_date": "2024-03-27",
+      "cusip": "91282CJU6"
+    },
+    {
+      "auction_date": "2024-04-24",
+      "cusip": "91282CKM2"
+    },
+    {
+      "auction_date": "2024-05-29",
+      "cusip": "91282CKM2"
+    },
+    {
+      "auction_date": "2024-06-26",
+      "cusip": "91282CKM2"
+    },
+    {
+      "auction_date": "2024-07-24",
+      "cusip": "91282CLA7"
+    },
+    {
+      "auction_date": "2024-08-28",
+      "cusip": "91282CLA7"
+    },
+    {
+      "auction_date": "2024-09-25",
+      "cusip": "91282CLA7"
+    },
+    {
+      "auction_date": "2024-10-29",
+      "cusip": "91282CLT6"
+    },
+    {
+      "auction_date": "2024-11-26",
+      "cusip": "91282CLT6"
+    },
+    {
+      "auction_date": "2024-12-24",
+      "cusip": "91282CLT6"
+    },
+    {
+      "auction_date": "2025-01-28",
+      "cusip": "91282CMJ7"
+    },
+    {
+      "auction_date": "2025-02-26",
+      "cusip": "91282CMJ7"
+    },
+    {
+      "auction_date": "2025-03-26",
+      "cusip": "91282CMJ7"
+    },
+    {
+      "auction_date": "2025-04-23",
+      "cusip": "91282CMX6"
+    },
+    {
+      "auction_date": "2025-05-28",
+      "cusip": "91282CMX6"
+    },
+    {
+      "auction_date": "2025-06-25",
+      "cusip": "91282CMX6"
+    },
+    {
+      "auction_date": "2025-07-29",
+      "cusip": "91282CNQ0"
+    },
+    {
+      "auction_date": "2025-08-27",
+      "cusip": "91282CNQ0"
+    },
+    {
+      "auction_date": "2025-09-24",
+      "cusip": "91282CNQ0"
+    },
+    {
+      "auction_date": "2025-10-29",
+      "cusip": "91282CPG0"
+    },
+    {
+      "auction_date": "2025-11-25",
+      "cusip": "91282CPG0"
+    },
+    {
+      "auction_date": "2025-12-23",
+      "cusip": "91282CPG0"
+    }
+  ],
+  "raw_evidence": [
+    {
+      "auction_date": "2024-01-24",
+      "cusip": "91282CJU6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-01-24",
+        "cusip": "91282CJU6",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2024-02-21",
+      "cusip": "91282CJU6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-02-21",
+        "cusip": "91282CJU6",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-03-27",
+      "cusip": "91282CJU6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-03-27",
+        "cusip": "91282CJU6",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-04-24",
+      "cusip": "91282CKM2",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-04-24",
+        "cusip": "91282CKM2",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2024-05-29",
+      "cusip": "91282CKM2",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-05-29",
+        "cusip": "91282CKM2",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-06-26",
+      "cusip": "91282CKM2",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-06-26",
+        "cusip": "91282CKM2",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-07-24",
+      "cusip": "91282CLA7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-07-24",
+        "cusip": "91282CLA7",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2024-08-28",
+      "cusip": "91282CLA7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-08-28",
+        "cusip": "91282CLA7",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-09-25",
+      "cusip": "91282CLA7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-09-25",
+        "cusip": "91282CLA7",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-10-29",
+      "cusip": "91282CLT6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-10-29",
+        "cusip": "91282CLT6",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2024-11-26",
+      "cusip": "91282CLT6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-11-26",
+        "cusip": "91282CLT6",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2024-12-24",
+      "cusip": "91282CLT6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2024-12-24",
+        "cusip": "91282CLT6",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-01-28",
+      "cusip": "91282CMJ7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-01-28",
+        "cusip": "91282CMJ7",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2025-02-26",
+      "cusip": "91282CMJ7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-02-26",
+        "cusip": "91282CMJ7",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-03-26",
+      "cusip": "91282CMJ7",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-03-26",
+        "cusip": "91282CMJ7",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-04-23",
+      "cusip": "91282CMX6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-04-23",
+        "cusip": "91282CMX6",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2025-05-28",
+      "cusip": "91282CMX6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-05-28",
+        "cusip": "91282CMX6",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-06-25",
+      "cusip": "91282CMX6",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-06-25",
+        "cusip": "91282CMX6",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-07-29",
+      "cusip": "91282CNQ0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-07-29",
+        "cusip": "91282CNQ0",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2025-08-27",
+      "cusip": "91282CNQ0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-08-27",
+        "cusip": "91282CNQ0",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-09-24",
+      "cusip": "91282CNQ0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-09-24",
+        "cusip": "91282CNQ0",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-10-29",
+      "cusip": "91282CPG0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-10-29",
+        "cusip": "91282CPG0",
+        "security_term": "2-Year",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "No"
+      }
+    },
+    {
+      "auction_date": "2025-11-25",
+      "cusip": "91282CPG0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-11-25",
+        "cusip": "91282CPG0",
+        "security_term": "1-Year 11-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    },
+    {
+      "auction_date": "2025-12-23",
+      "cusip": "91282CPG0",
+      "page": "page_0001.json",
+      "raw": {
+        "auction_date": "2025-12-23",
+        "cusip": "91282CPG0",
+        "security_term": "1-Year 10-Month",
+        "security_type": "Note",
+        "high_yield": "null",
+        "avg_med_yield": "null",
+        "high_discnt_rate": "null",
+        "avg_med_discnt_rate": "null",
+        "high_investment_rate": "null",
+        "avg_med_investment_rate": "null",
+        "reopening": "Yes"
+      }
+    }
+  ]
+}
