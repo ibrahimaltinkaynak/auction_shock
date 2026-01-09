@@ -57,10 +57,23 @@ def fetch_range(start_date: str, end_date: str, run_dir: Path) -> dict:
       break
 
     page_number += 1
+  # observed min/max auction_date in retrieved raw pages (not the requested filter bounds)
+  observed_dates = []
+  for pth in sorted(run_dir.glob("page_*.json")):
+    data = json.loads(pth.read_text(encoding="utf-8"))
+    for row in data.get("data", []):
+      d = row.get("auction_date")
+      if d:
+        observed_dates.append(d)
+  observed_min = min(observed_dates) if observed_dates else None
+  observed_max = max(observed_dates) if observed_dates else None
+
 
   run_meta = {
-    "start_date": start_date,
-    "end_date": end_date,
+    "requested_start_date": start_date,
+    "requested_end_date": end_date,
+    "observed_min_auction_date": observed_min,
+    "observed_max_auction_date": observed_max,
     "retrieved_at_utc": retrieved_at_utc,
     "pages": page_number,
     "total_rows": total_rows,
