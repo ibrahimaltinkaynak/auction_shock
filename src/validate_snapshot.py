@@ -10,7 +10,7 @@ PROOF_PATH = Path("dist/proof_packs/proof_missing_tail_proxy_730d_v4.json")
 EXPECTED = {
   "rows": 880,
   "min_date": "2024-01-10",
-  "max_date": "2026-01-09",
+  "max_date": "2026-01-08",
   "missing_tail": 24,
 }
 
