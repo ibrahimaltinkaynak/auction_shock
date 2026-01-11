@@ -15,3 +15,11 @@ dist/*
 !dist/proof_packs/
 !dist/proof_packs/**
 
+
+# delivery packs are build artifacts (never versioned)
+delivery/**/data/*.parquet
+delivery/**/SHA256SUMS
+delivery/**/MANIFEST.txt
+delivery/**/verify/**
+delivery/**/spec/SELLER_README.md
+delivery/**/*.zip
